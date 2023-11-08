@@ -65,6 +65,10 @@ let array_mul = [
     {name:"D", last_name:"Duarte", age:351}
 ]
 
+for (let i = 0; i<= array_mul.length; i++) {
+    alert(array_mul[i].name.concat(" "+array_mul[i].last_name))
+}
+
 // *** OPERADORES ***
 
 // Suma +
@@ -164,11 +168,7 @@ do {
 
 // EVENTS AND FUNCTIONS
 
-function load_page() {
-    // ejm();
-    // ejem2();
-    alert("Kill yourself :D");
-}
+
 
 function box_onblur() {
     const box_onblur_const = document.querySelector("#box_onblur");
@@ -212,3 +212,32 @@ form.addEventListener("submit", name_event => {
     }
     validation.innerText = info;
 })
+
+function load_page() {
+    document.getElementById("nombres").focus();
+    document.getElementById("apellidos").disabled=true;
+    let date = new Date();
+    console.log((date.getSeconds()));
+}
+
+function validate() {
+    // charAt
+    // new Date()
+    // indexOf() - Izquierda a Derecha  -   -1 / No hay / Falso
+    // lastIndexOf() - Derecha a Izquierda
+    // split - join   Son contrarios
+    // reverse - array al contrario
+    // toFixed - aproximar
+
+    let nombres = document.getElementById("nombres").value;
+    alert(nombres.split(" "));
+    if (nombres.length > 2) {
+        document.getElementById("apellidos").disabled=false;
+        document.getElementById("apellidos").focus();
+    }
+    else {
+        document.getElementById("apellidos").disabled=true;
+        document.getElementById("nombres").focus();
+    }
+
+}
