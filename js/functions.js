@@ -230,14 +230,12 @@ function validate() {
     // toFixed - aproximar
 
     let nombres = document.getElementById("nombres").value;
-    alert(nombres.split(" "));
+    alert(nombres.split(""));
     if (nombres.length > 2) {
         document.getElementById("apellidos").disabled=false;
-        document.getElementById("apellidos").focus();
     }
     else {
         document.getElementById("apellidos").disabled=true;
-        document.getElementById("nombres").focus();
     }
 
 }
